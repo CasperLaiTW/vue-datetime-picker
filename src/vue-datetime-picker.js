@@ -165,7 +165,8 @@ module.exports = {
     $(this.$el).datetimepicker(options);
     this.control = $(this.$el).data("DateTimePicker");
     // set the date to the current value of the model
-    this.control.date(this.model);
+    // Avoid model is empty!!!
+    this.control.date(this.model ? this.model.format(this.datetimeFormat) : this.model);
     var me = this;
     $(this.$el).on("dp.change", function () {
       if (! me.isChanging) {

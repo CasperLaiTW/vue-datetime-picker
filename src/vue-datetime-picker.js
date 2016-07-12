@@ -161,6 +161,7 @@ module.exports = {
       }
       options.tooltips = tooltips;
     }
+    options.timeZone = 'Asia/Taipei';
     // create the control
     $(this.$el).datetimepicker(options);
     this.control = $(this.$el).data("DateTimePicker");
